@@ -1,3 +1,5 @@
+import { base } from "./api/base";
+
 export function searchRecipes(query) {
   query = query.trim().replace(" ", "+");
 
