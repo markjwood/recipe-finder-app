@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const [searchText, setSearchText] = useState("");
+  const [recipeList, setRecipeList] = useState([]);
 
   return (
     <>
