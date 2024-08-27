@@ -6,4 +6,6 @@ body {
   @apply w-full;
   @apply min-h-lvh;
   @apply pt-1;
+  @apply bg-slate-100;
+  @apply text-slate-900;
 }
