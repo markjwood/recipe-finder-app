@@ -1,4 +1,4 @@
-import { base } from "./api/base";
+import { base } from "./base";
 
 export function searchRecipes(query) {
   query = query.trim().replace(" ", "+");
