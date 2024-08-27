@@ -1,10 +1,13 @@
+import { useState } from "react";
 import RecipeList from "./components/RecipeList";
 import SearchBar from "./components/SearchBar";
 
 function App() {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <>
-      <SearchBar />
+      <SearchBar searchText={searchText} onChange={setSearchText} />
       <RecipeList />
     </>
   );

@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-export default function SearchBar() {
-  const [searchText, setSearchText] = useState("");
-
+export default function SearchBar({ searchText, onChange }) {
   function onSubmit(e) {
     e.preventDefault();
     console.log(searchText);
@@ -20,7 +16,7 @@ export default function SearchBar() {
           className="text-lg md:text-xl border rounded p-1"
           type="text"
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => onChange(e.target.value)}
         />
       </label>
       <button className="bg-sky-600 text-white rounded-lg font-bold px-4 hover:bg-sky-300 hover:text-sky-800 transition">
