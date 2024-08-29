@@ -13,11 +13,13 @@ export default function RootLayout() {
 
   return (
     <>
-      <header className="flex gap-3 justify-between p-4">
-        <h1 className="text-3xl font-serif font-bold">
-          <Link to="/">Recipe Finder</Link>
-        </h1>
-        <SearchBar />
+      <header className="p-4">
+        <div className="flex gap-3 justify-between items-center container mx-auto">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold">
+            <Link to="/">Recipe Finder</Link>
+          </h1>
+          <SearchBar />
+        </div>
       </header>
       <ScrollRestoration />
       {isLoading ? <h2>loading...</h2> : <Outlet />}
