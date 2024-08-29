@@ -1,7 +1,8 @@
 import { base } from "./base";
 
 export function searchRecipes(query) {
-  query = query.trim().replace(" ", "+");
+  // replace spaces in query with '+'
+  query = query.trim().replace(/\s+/g, "+");
 
   const controller = new AbortController();
   const app_key = import.meta.env.VITE_APP_KEY;
@@ -11,8 +12,8 @@ export function searchRecipes(query) {
   const recipes = base
     .get(queryString, { signal: controller.signal })
     .then((res) => {
-      console.log(res);
-      return res.data.hits;
+      // return null if no hits
+      return res.data?.hits ?? null;
     })
     .catch((err) => console.error(err));
 
