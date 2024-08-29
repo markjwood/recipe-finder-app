@@ -8,8 +8,12 @@ function App() {
 
   return (
     <>
-      <SearchBar searchText={searchText} onChange={setSearchText} />
-      <RecipeList />
+      <SearchBar
+        searchText={searchText}
+        onChange={setSearchText}
+        setRecipeList={setRecipeList}
+      />
+      {recipeList.length > 0 && <RecipeList list={recipeList} />}
     </>
   );
 }
