@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./RootLayout";
-import RecipeList from "./components/RecipeList";
+import { recipesListRoute } from "./components/RecipeList";
 
 export const router = createBrowserRouter([
   {
@@ -23,9 +23,10 @@ export const router = createBrowserRouter([
               </p>
             ),
           },
-          { path: "search-results", element: <RecipeList /> },
+          { path: "recipes", ...recipesListRoute },
         ],
       },
+      { path: "*", element: <h2>404 - Page not found</h2> },
     ],
   },
 ]);
