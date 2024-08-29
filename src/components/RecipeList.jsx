@@ -12,7 +12,9 @@ function RecipeList() {
     <section className="prose mx-auto my-20 w-4/5 max-w-2xl bg-white rounded-xl py-4 xl:py-6 px-4 xl:px-8">
       <h2 className="text-center">Recipes</h2>
       {isLoading ? (
-        <h3>getting recipes...</h3>
+        <span className="loading loading-spinner text-primary">
+          Getting recipes...
+        </span>
       ) : (
         <ul>
           {list.map((r) => (
@@ -24,7 +26,11 @@ function RecipeList() {
   );
 }
 
-async function loader({ params: { query } }) {
+async function loader({ request }) {
+  const url = new URL(request.url);
+  const query = url.searchParams.get("q");
+
+  if (!query) return [];
   return await searchRecipes(query);
 }
 
