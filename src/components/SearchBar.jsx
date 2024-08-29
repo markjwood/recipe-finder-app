@@ -1,11 +1,11 @@
 import { searchRecipes } from "../api/search";
 
-export default function SearchBar({ searchText, onChange }) {
+export default function SearchBar({ searchText, onChange, setRecipeList }) {
   async function onSubmit(e) {
     e.preventDefault();
 
     const list = await searchRecipes(searchText);
-    console.log(list);
+    setRecipeList(list);
   }
 
   return (
