@@ -22,7 +22,14 @@ export default function RootLayout() {
         </div>
       </header>
       <ScrollRestoration />
-      {isLoading ? <h2>loading...</h2> : <Outlet />}
+      {isLoading ? (
+        <div className="flex justify-center items-center gap-6 container mx-auto text-2xl">
+          Loading...
+          <span className="loading loading-spinner loading-lg text-primary"></span>
+        </div>
+      ) : (
+        <Outlet />
+      )}
     </>
   );
 }
