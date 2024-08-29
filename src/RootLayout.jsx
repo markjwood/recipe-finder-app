@@ -14,8 +14,8 @@ export default function RootLayout() {
   return (
     <>
       <header className="p-4">
-        <div className="flex gap-3 justify-between items-center container mx-auto">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold">
+        <div className="md:flex gap-3 justify-between items-center container mx-auto">
+          <h1 className="text-center md:text-left text-2xl md:text-3xl lg:text-4xl font-serif font-bold">
             <Link to="/">Recipe Finder</Link>
           </h1>
           <SearchBar />
