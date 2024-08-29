@@ -12,18 +12,18 @@ export default function SearchBar({ searchText, onChange, setRecipeList }) {
     <form className="my-6 flex gap-3 justify-center" onSubmit={onSubmit}>
       <label
         htmlFor="recipe-search"
-        className="text-lg md:text-xl flex gap-3 items-center"
+        className="md:text-lg lg:text-xl flex gap-3 items-center"
       >
         Find Recipes
         <input
           id="recipe-search"
-          className="input input-bordered max-w-xs"
+          className="input input-sm md:input-md input-bordered max-w-xs p-1"
           type="text"
           value={searchText}
           onChange={(e) => onChange(e.target.value)}
         />
       </label>
-      <button className="btn btn-primary">Search</button>
+      <button className="btn btn-sm md:btn-md btn-primary">Search</button>
     </form>
   );
 }
