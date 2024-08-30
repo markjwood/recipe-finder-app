@@ -23,7 +23,13 @@ export const router = createBrowserRouter([
               </p>
             ),
           },
-          { path: "recipes", ...recipesListRoute },
+          {
+            path: "recipes",
+            children: [
+              { index: true, ...recipesListRoute },
+              { path: ":id", element: <h2>Recipe</h2> },
+            ],
+          },
         ],
       },
       { path: "*", element: <h2>404 - Page not found</h2> },
