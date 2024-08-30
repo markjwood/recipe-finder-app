@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigation } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import { searchRecipes } from "../api/search";
 
 function RecipeList() {
@@ -16,10 +16,18 @@ function RecipeList() {
           Getting recipes...
         </span>
       ) : (
-        <ul>
-          {list.map((r) => (
-            <li key={r.recipe.uri}>{r.recipe.label}</li>
-          ))}
+        <ul className="flex flex-col list-none px-4">
+          {list.map((r) => {
+            console.log(r);
+            const id = r.recipe.uri.split("#")[1];
+            return (
+              <li key={id}>
+                <Link className="btn btn-sm w-full" to={id}>
+                  {r.recipe.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </section>
