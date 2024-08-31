@@ -15,6 +15,8 @@ function RecipeList() {
         <span className="loading loading-spinner text-primary">
           Getting recipes...
         </span>
+      ) : list.length === 0 || !list ? (
+        <p className="text-xl italic text-center">No recipes found</p>
       ) : (
         <ul className="flex flex-col list-none px-4">
           {list.map((r) => {
