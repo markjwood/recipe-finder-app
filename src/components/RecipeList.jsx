@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import { Link, redirect, useLoaderData, useNavigation } from "react-router-dom";
 import { searchRecipes } from "../api/search";
 
 function RecipeList() {
@@ -18,12 +18,17 @@ function RecipeList() {
       ) : (
         <ul className="flex flex-col list-none px-4">
           {list.map((r) => {
-            console.log(r);
-            const id = r.recipe.uri.split("#")[1];
+            const recipe = r.recipe;
+
+            {
+              /* get id from recipe.uri */
+            }
+            const id = recipe.uri.split("#")[1];
+
             return (
               <li key={id}>
-                <Link className="btn btn-sm w-full" to={id}>
-                  {r.recipe.label}
+                <Link className="btn btn-sm w-full" to={id} state={recipe}>
+                  {recipe.label}
                 </Link>
               </li>
             );
@@ -38,7 +43,7 @@ async function loader({ request }) {
   const url = new URL(request.url);
   const query = url.searchParams.get("q");
 
-  if (!query) return [];
+  if (!query) return redirect("/");
   return await searchRecipes(query);
 }
 
