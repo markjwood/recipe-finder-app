@@ -5,7 +5,7 @@ export function Recipe() {
   const recipe = location.state;
 
   return (
-    <article className="container mx-auto px-4 prose">
+    <article className="container mx-auto mb-8 px-4 prose">
       <header className="mb-6">
         <h2 className="text-center mb-0">{recipe.label}</h2>
         {recipe.source && (
@@ -63,6 +63,15 @@ export function Recipe() {
           <Link to={recipe.url} target="_blank">
             full recipe
           </Link>
+          .
+        </p>
+        <p className="italic text-sm text-info">
+          <span className="font-bold">Note: </span> The above link opens in a
+          new tab and will take you away from our site to the original location
+          of this recipe. Sometimes recipes are deleted or the url can change
+          and this is beyond our control. If it takes you somewhere other than
+          where you expected, you might try searching that website for the
+          recipe's title.
         </p>
       </section>
     </article>
