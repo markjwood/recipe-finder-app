@@ -15,7 +15,9 @@ export function searchRecipes(query) {
       // return null if no hits
       return res.data?.hits ?? null;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      if (err.name === "AbortError") return;
+    });
 
   return recipes;
 }
