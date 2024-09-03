@@ -1,1 +1,8 @@
-{ "plugins": [["prettier-plugin-tailwindcss"]] }
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "arrowParens": "avoid",
+  "useTabs": true,
+  "singleQuote": true,
+  "semi": false,
+  "jsxSingleQuote": true
+}
