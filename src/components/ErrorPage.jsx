@@ -21,8 +21,21 @@ export default function ErrorPage() {
 
 	return (
 		<div className='container prose mx-auto'>
-			<h2>Something went wrong &ndash; {error.name}</h2>
-			<p>{error.message}</p>
+			{error.status === 404 ? (
+				<>
+					<h2>Not found</h2>
+					{error.message && <p>{error.message}</p>}
+				</>
+			) : (
+				<>
+					<h2>Something went wrong &ndash; {error.name}</h2>
+					<p>
+						{error.status === 500
+							? 'We encountered a problem with the network. Please try again later.'
+							: error.message}
+					</p>
+				</>
+			)}
 			{!isDev && (
 				<p>
 					Returning <Link to='/'>home</Link> in 5 seconds.
