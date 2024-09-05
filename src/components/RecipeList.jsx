@@ -49,7 +49,9 @@ async function loader({ request }) {
 	return await searchRecipes(query)
 }
 
-export const recipesListRoute = {
+const recipesListRoute = {
 	loader,
 	element: <RecipeList />,
 }
+
+export default recipesListRoute

@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 
-export function Recipe() {
+export default function Recipe() {
 	const location = useLocation()
 	const recipe = location.state
 

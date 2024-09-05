@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import RootLayout from './RootLayout'
-import { recipesListRoute } from './components/RecipeList'
-import { Recipe } from './components/Recipe'
+import recipesListRoute from './components/RecipeList'
+import Recipe from './components/Recipe'
 import ErrorPage from './components/ErrorPage'
 
 export const router = createBrowserRouter([
