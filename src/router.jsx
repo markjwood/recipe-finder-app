@@ -3,6 +3,7 @@ import RootLayout from './RootLayout'
 import recipesListRoute from './components/RecipeList'
 import Recipe from './components/Recipe'
 import ErrorPage from './components/ErrorPage'
+import FourOFour from './components/FourOFour'
 
 export const router = createBrowserRouter([
 	{
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
 					},
 				],
 			},
-			{ path: '*', element: <h2>404 - Page not found</h2> },
+			{ path: '*', element: <FourOFour /> },
 		],
 	},
 ])

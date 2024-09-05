@@ -16,11 +16,9 @@ export default function FourOFour() {
 			<p>
 				That page doesn't seem to exist. Please check the url and try again.
 			</p>
-			{!isDev && (
-				<p>
-					Returning <Link to='/'>home</Link> in 5 seconds.
-				</p>
-			)}
+			<p>
+				Returning <Link to='/'>home</Link> in 5 seconds.
+			</p>
 		</>
 	)
 }
