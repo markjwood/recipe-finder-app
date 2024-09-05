@@ -4,6 +4,15 @@ export default function Recipe() {
 	const location = useLocation()
 	const recipe = location.state
 
+	if (!recipe?.label) {
+		const err = new Error('Not found')
+		err.status = 404
+		err.message =
+			'The recipe you are looking for cannot be located. Please try your search again.'
+
+		throw err
+	}
+
 	return (
 		<article className='container prose mx-auto mb-8 px-4'>
 			<header className='mb-6'>
