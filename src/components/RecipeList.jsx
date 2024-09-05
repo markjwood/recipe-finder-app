@@ -45,7 +45,9 @@ async function loader({ request }) {
 	const url = new URL(request.url)
 	const query = url.searchParams.get('q')
 
+	// redirect to homepage if no query provided
 	if (!query) return redirect('/')
+
 	return await searchRecipes(query)
 }
 
