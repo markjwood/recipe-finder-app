@@ -25,6 +25,7 @@ export default function RootLayout() {
 			{isLoading ? (
 				<div className='container mx-auto flex items-center justify-center gap-6 text-2xl'>
 					Loading...
+					{/* loading spinner from daisyUI */}
 					<span className='loading loading-spinner loading-lg text-primary'></span>
 				</div>
 			) : (
