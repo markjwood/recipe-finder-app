@@ -55,3 +55,7 @@ npm run dev
 - `router.jsx`: Defines the app's routes and handles page navigation.
 - `ErrorPage.jsx`: A custom error page that handles route errors and exceptions.
 - `RootLayout.jsx`: The main layout for the app, wrapping all child components.
+
+## License
+
+This project is licensed under the MIT License.
