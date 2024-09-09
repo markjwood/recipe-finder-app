@@ -40,13 +40,19 @@ cd recipe-finder
 npm install
 ```
 
-4. Start the defelopment server:
+4. Get your API key & APP key:
+   Go to [Edamam](https://api.edamam.com) and sign up to get your keys. There are free and paid accounts available, depending on your needs.
+
+5. Edit .env.local.template
+   Rename file to .env.local and add your own keys from Edamam.
+
+6. Start the defelopment server:
 
 ```bash
 npm run dev
 ```
 
-5. Open your browser and go to `http://localhost:3000` to see the app in action.
+7. Open your browser and go to `http://localhost:3000` to see the app in action.
 
 ## Project Structure
 
