@@ -1,0 +1,12 @@
+[build]
+  functions = "netlify/functions"
+  publish = "dist" # Or your build directory (e.g., 'build' for Create React App)
+
+[dev]
+  framework = "vite" # If you're using Vite, otherwise set this to your framework
+  command = "vite"   # This depends on your framework too (e.g., "npm run start" for CRA)
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
